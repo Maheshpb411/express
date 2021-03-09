@@ -1,0 +1,24 @@
+basically routes in expresss are used to work with multiple pages at a time from onw cose only by using /about or /hobby or /contact,etc
+
+
+
+const express = require("express");
+
+const app = express();
+
+app.get("/",function(request,response)
+{response.send("<h1>helooooooooooo</h1>")});
+
+app.get("/contact",function(req,res){
+  res.send("<h2>contact me at mpbandewar@gmail.com</h2>")
+});
+
+app.get("/about",function(req,res){
+  res.send("<h3>I am a Mahesh Bandewar</h3>")
+});
+
+app.get("/hobby",function(req,res){
+  res.send("<h3>to play a cricket very long time</h3>")
+});
+
+app.listen(3000,()=>console.log("mahi's process is starting"));
