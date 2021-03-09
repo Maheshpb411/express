@@ -1,0 +1,53 @@
+bmi.js---->>>>>
+
+const express = require("express");
+
+const bodyParser = require("body-parser");
+const app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.get("/",function(req,res){
+  res.sendFile(__dirname + "/bmi.html")
+
+});
+
+app.post("/",function(req,res){
+  var wt =parseFloat( req.body.wt);
+  var ht = parseFloat(req.body.ht);
+
+  var result = wt / (wt+ht);
+  res.send("your result is "+ result);
+});
+
+// app.get("/",function(req,res){
+//   res.send("<input type="text" placeholder="first name">")
+//
+// });
+
+app.listen(3000,()=>console.log("mahi's process is starting"));
+=================
+=====================
+
+bmi.html---------->>>>>>>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <form action="/" method="post">
+    <input type="text" name="wt" placeholder="weight">
+    <input type="text" name="ht" placeholder="height">
+    <button type="submit" name="bmi">bmi</button>
+    <!-- <button type="submit" name="sub">sustraction</button>
+    <button type="submit" name="mul">muliplication</button>
+    <button type="submit" name="div">division</button> -->
+  </form>
+</body>
+
+</html>
