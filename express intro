@@ -1,0 +1,10 @@
+---->>>>>server.js--->>>>>>>
+
+const express = require("express");    /////here import a module of express
+
+const app = express();
+
+app.get("/",function(request,response);   //////here "/" this is a link for localhost3000...
+{response.send("<h1>helooooooooooo</h1>")});  //////to get a responce from server
+
+app.listen(3000,()=>console.log("mahi's process is starting"));
